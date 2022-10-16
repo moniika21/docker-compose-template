@@ -1,0 +1,10 @@
+services:
+  app:
+    image: 'vaultwarden/server:latest'
+    container_name: vaultwarden
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - '8000:80'
+    volumes:
+      - ./vw-data:/data

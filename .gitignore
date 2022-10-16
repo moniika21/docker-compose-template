@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!docker-compose.yaml
+!docker-compose.yml
+
+# ...even if they are in subdirectories
+!*/
