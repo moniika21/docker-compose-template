@@ -3,7 +3,6 @@ services:
     image: 'vaultwarden/server:latest'
     container_name: vaultwarden
     restart: unless-stopped
-    network_mode: bridge
     expose:
       - '80'
 #    ports:
@@ -12,3 +11,7 @@ services:
       - ./vw-data:/data
 #    environment:
 #    - LOG_FILE=/data/logs/vaultwarden.log
+
+networks:
+  default:
+    name: infranet
