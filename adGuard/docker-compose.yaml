@@ -1,9 +1,8 @@
 services:
-   adguardhome:
-     image: adguard/adguardhome
-     container_name: adguardhome
+   app:
+     image: 'adguard/adguardhome:latest'
+     container_name: adguard
      restart: unless-stopped
-     network_mode: bridge
      ports:
        - 53:53/tcp
        - 53:53/udp
@@ -14,3 +13,7 @@ services:
      volumes:
        - ./work:/opt/adguardhome/work
        - ./conf:/opt/adguardhome/conf
+
+networks:
+  default:
+    name: infranet
