@@ -8,10 +8,14 @@ services:
 #    ports:
 #      - '8000:80'
     volumes:
-      - ./vw-data:/data
+      - vw-data:/data
 #    environment:
 #    - LOG_FILE=/data/logs/vaultwarden.log
 
 networks:
   default:
     name: infranet
+
+volumes:
+  vw-data: 
+    name: vw-data

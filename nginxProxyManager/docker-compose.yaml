@@ -4,17 +4,22 @@ services:
     image: 'jc21/nginx-proxy-manager:latest'
     container_name: nginx-proxy-manager
     restart: unless-stopped
-    expose:
-      - '81'
+#    expose:
+#      - '81'
     ports:
       - '80:80'
       - '443:443'
-#      - '81:81'
+      - '81:81'
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - ng-data:/data
+      - ng-letsencrypt:/etc/letsencrypt
 
-# docker network create infranet
 networks: 
   default:     
     name: infranet 
+
+volumes:
+  ng-data:
+    name: ng-data
+  ng-letsencrypt:
+    name: ng-letsencrypt	
