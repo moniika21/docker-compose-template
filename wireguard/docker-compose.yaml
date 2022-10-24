@@ -19,7 +19,8 @@ services:
       - TZ=Europe/London
       - SERVERURL=vpn.moniika.tech
       - SERVERPORT=51820
-      - PEERS=1
+      - PEERS=Achille,Xiaomi
+#      - PEERS=2
       - PEERDNS=auto
       - INTERNAL_SUBNET=10.13.13.0
       - ALLOWEDIPS=0.0.0.0/0,::0/0
