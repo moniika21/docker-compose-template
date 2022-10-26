@@ -17,6 +17,7 @@ services:
 networks: 
   default:     
     name: infranet 
+    driver: bridge
 
 volumes:
   ng-data:

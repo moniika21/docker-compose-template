@@ -13,6 +13,7 @@ services:
 networks:
   default:
     name: infranet
+    driver: bridge
 
 volumes:
   pt-data: 
