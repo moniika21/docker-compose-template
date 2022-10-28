@@ -1,0 +1,19 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'  
+    environment:
+      - TZ=Europe/Paris
+      # Removes old images after updating
+      - WATCHTOWER_CLEANUP=true
+      # Cron expression who defines when to check for new images
+      - WATCHTOWER_SCHEDULE=0 0 7 * * *
+#      - WATCHTOWER_DEBUG=true
+
+networks:
+  default:
+    name: infranet
+    driver: bridge

@@ -1,5 +1,5 @@
 services:
-  app:
+  wireguard:
     image: 'linuxserver/wireguard:latest'
     container_name: wireguard
     restart: unless-stopped
@@ -14,9 +14,9 @@ services:
       - wg-config:/config
       - /lib/modules:/lib/modules
     environment:
+      - TZ=Europe/Paris
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
       - SERVERURL=vpn.moniika.tech
       - SERVERPORT=51820
       - PEERS=Achille,Xiaomi
@@ -24,7 +24,7 @@ services:
       - PEERDNS=auto
       - INTERNAL_SUBNET=10.13.13.0
       - ALLOWEDIPS=0.0.0.0/0,::0/0
-      - LOG_CONFS=true
+#      - LOG_CONFS=true
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
 

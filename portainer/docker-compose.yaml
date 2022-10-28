@@ -1,5 +1,5 @@
 services:
-  app:
+  portainer:
     image: 'portainer/portainer-ce:latest'
     container_name: portainer
     restart: unless-stopped
@@ -9,6 +9,8 @@ services:
     volumes:
       - pt-data:/data
       - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - TZ=Europe/Paris  
 
 networks:
   default:

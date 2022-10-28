@@ -1,5 +1,5 @@
 services:
-  app:
+  vaultwarden:
     image: 'vaultwarden/server:latest'
     container_name: vaultwarden
     restart: unless-stopped
@@ -9,8 +9,9 @@ services:
 #      - '8000:80'
     volumes:
       - vw-data:/data
-#    environment:
-#    - LOG_FILE=/data/logs/vaultwarden.log
+    environment:
+      - TZ=Europe/Paris
+#      - LOG_FILE=/data/logs/vaultwarden.log
 
 networks:
   default:
