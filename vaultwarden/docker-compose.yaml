@@ -5,13 +5,13 @@ services:
     restart: unless-stopped
     expose:
       - '80'
-#    ports:
-#      - '8000:80'
+  #  ports:
+  #    - '8000:80'
     volumes:
       - vw-data:/data
     environment:
       - TZ=Europe/Paris
-#      - LOG_FILE=/data/logs/vaultwarden.log
+    #  - LOG_FILE=/data/logs/vaultwarden.log
 
 networks:
   default:

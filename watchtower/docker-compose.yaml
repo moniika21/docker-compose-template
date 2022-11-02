@@ -11,7 +11,7 @@ services:
       - WATCHTOWER_CLEANUP=true
       # Cron expression who defines when to check for new images
       - WATCHTOWER_SCHEDULE=0 0 7 * * *
-#      - WATCHTOWER_DEBUG=true
+    #  - WATCHTOWER_DEBUG=true
 
 networks:
   default:

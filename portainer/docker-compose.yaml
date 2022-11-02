@@ -4,13 +4,16 @@ services:
     container_name: portainer
     restart: unless-stopped
     expose:
-#      - '8000'
+     # - '8000'
       - '9443'
     volumes:
       - pt-data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - TZ=Europe/Paris  
+      - TZ=Europe/Paris
+     # - LANG=fr_FR.UTF-8
+     # - LANGUAGE=fr_FR:fr
+     # - LC_ALL=fr_FR.UTF-8
 
 networks:
   default:
