@@ -1,9 +1,11 @@
 # Template for docker compose files
 Here is a bunch of docker compose files to deploy with ease some services that I'm used to.
 ## Nginx proxy manager setup
-If your familiar with docker, you will see that some containers have only opened ports (`expose` entry) on the private user defined network, it's because only the nginx-proxy-manager is exposed to the internet
+If your familiar with docker, you will see that some containers have only opened ports (`expose` entry) on the private user defined network, it's because only the [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager/tree/master)   have ports exposed externally (on the host network card with `ports:` entries) and [handle requests by sub domain name](https://en.wikipedia.org/wiki/Reverse_proxy) and redirect them to desired container or service.
+
+The [Vpn](https://www.wireguard.com/) have also ports exposed externally
 ## Common attributes
-Between all files, they are several attributes that are common:
+Between all files, they are several common attributes:
 
 ### Eventuals logs with the same time zone than my system's logs
 ```yaml
