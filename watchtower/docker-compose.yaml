@@ -10,7 +10,7 @@ services:
       # Removes old images after updating
       - WATCHTOWER_CLEANUP=true
       # Cron expression who defines when to check for new images
-      - WATCHTOWER_SCHEDULE=0 0 7 * * *
+      - WATCHTOWER_SCHEDULE=0 0 7 * * SAT
     #  - WATCHTOWER_DEBUG=true
 
 networks:
