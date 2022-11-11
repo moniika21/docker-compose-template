@@ -4,7 +4,7 @@ Here is a bunch of docker compose files to deploy with ease some services that I
 
 ## Nginx proxy manager setup
 
-If your familiar with docker, you will see that some containers have only opened ports (`expose` entry) on the private user defined network, it's because only the [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager/tree/master)   have ports exposed externally (on the host network card with `ports:` entries) and [handle requests by sub domain name](https://en.wikipedia.org/wiki/Reverse_proxy) and redirect them to desired container or service.
+If your familiar with docker, you will see that some containers have only opened ports (`expose` entry) on the private user defined network, it's because only the [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager/tree/master)   have ports exposed externally (on the host network card with `ports:` entry) and [handle requests by sub domain name](https://en.wikipedia.org/wiki/Reverse_proxy) and redirect them to desired container or service.
 
 The [Vpn](https://www.wireguard.com/) have also ports exposed externally
 
