@@ -69,5 +69,11 @@ volumes:
 ## TODO
 
 - watchtower notification of which container updated, mail or <https://healthchecks.io/>
-
-- update to one update per week
+WATCHTOWER_NOTIFICATIONS_LEVEL=panic, fatal, error, warn
+WATCHTOWER_NOTIFICATIONS=email
+WATCHTOWER_NOTIFICATION_EMAIL_FROM=watchtower@moniika.tech
+WATCHTOWER_NOTIFICATION_EMAIL_TO: caribourgogne@gmail.com
+WATCHTOWER_NOTIFICATION_EMAIL_SERVER: smtp.your-domain.com
+WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT: 587
+WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER=fromaddress@gmail.com
+WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD=app_password
