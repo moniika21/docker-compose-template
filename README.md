@@ -4,7 +4,7 @@ Here is a bunch of docker compose files to deploy with ease some services that I
 
 ## Nginx proxy manager setup
 
-If your familiar with docker, you will see that some containers have only opened ports (`expose` entry) on the private user defined network, it's because only the [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager/tree/master)   have ports exposed externally (on the host network card with `ports:` entry) and [handle requests by sub domain name](https://en.wikipedia.org/wiki/Reverse_proxy) and redirect them to desired container or service.
+If you're familiar with docker, you will see that some containers have only opened ports (`expose` entry) on the private user defined network, it's because only the [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager/tree/master)   have ports exposed externally (on the host network card with `ports:` entry) and [handle requests by sub domain name](https://en.wikipedia.org/wiki/Reverse_proxy) and redirect them to desired container or service.
 
 The [Vpn](https://www.wireguard.com/) have also ports exposed externally
 
@@ -49,7 +49,7 @@ container_name: <name_desired>
 ```yaml
 networks:
   default:
-    name: <name_desired>
+    name: <name>
     driver: bridge
 ```
 
@@ -58,12 +58,12 @@ networks:
 - [Default location](https://docs.docker.com/storage/#choose-the-right-type-of-mount) of volumes are `/var/lib/docker/volumes/` (on linux)
 - [name](https://docs.docker.com/compose/compose-file/compose-file-v3/#name) is used to override the default naming of real volume in the file system, otherwise the folder name will be like `<directory_name>_<volume_name>`
 - The final location of data will be embeded in a `_data` subdirectory folder
-- To sum up, the location of the data will be in `/var/lib/docker/volumes/<name_desired>/_data` folder
+- To sum up, the location of the data will be in `/var/lib/docker/volumes/<name>/_data` folder
 
 ```yaml
 volumes:
-  <name_desired>: 
-    name: <name_desired>
+  <name>: 
+    name: <name>
 ```
 
 ## TODO
